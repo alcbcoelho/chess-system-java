@@ -34,7 +34,11 @@ public class Board {
     public Piece piece(Position position) {
         return pieces[position.getRow()][position.getColumn()];
     }
-//    public void placePiece(Piece piece, Position position)
+    public void placePiece(Piece piece, Position position) {
+        pieces[position.getRow()][position.getColumn()] = piece;
+        piece.position = position;  // this protected field from the Piece class is accessible here because Board is in the same package as Piece
+    }
+
 //    public Piece removePiece(Position position)
 //    public boolean positionExists(Position position)
 //    public boolean thereIsAPiece(Position position)
