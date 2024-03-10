@@ -20,9 +20,9 @@ public abstract class ChessPiece extends Piece {
 //        return new ChessPosition(position.getRow(), position.getColumn());
 //    }
 //
-//    protected boolean isThereOpponentPiece(Position position) {
-//
-//    }
+    protected boolean isThereOpponentPiece(Position position) {
+        return (getBoard().thereIsAPiece(position)) && (((ChessPiece) getBoard().piece(position)).getColor() != color);
+    }
 //
 //    protected void increaseMoveCount() {
 //        moveCount++;
